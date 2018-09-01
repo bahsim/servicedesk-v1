@@ -4,9 +4,11 @@ import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/
 import Paper from '@material-ui/core/Paper';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import SupportIcon from '@material-ui/icons/ContactSupport';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 const theme = createMuiTheme({
   palette: {
@@ -30,14 +32,18 @@ const styles = {
     margin: theme.spacing.unit,
     minWidth: '100%',
   },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
+  button: {
+		marginTop: 		'2%',
+		marginBottom:	'1%',
   },
 };
 
 
 function FuncPanelCurrent(props) {
+	const styleLabel = {
+		fontSize:		'14px',
+		fontWeight:	700,
+	};
   const { classes } = props;
   return (
 		<MuiThemeProvider theme={theme}>
@@ -64,6 +70,24 @@ function FuncPanelCurrent(props) {
 										)
 									})}
 								</Select>
+							</FormControl>
+						</Grid>
+						<Grid item xs={5}></Grid>
+						<Grid item xs={2}>
+							<FormControl className={classes.formControl}>
+								<div style={props.isLangRu()}>
+									<Button mini variant="flat" color="secondary"
+										className={classes.button}
+										onClick={() => props.openReadme()}
+										className={classes.button} 
+										color="primary"
+									>
+										<SupportIcon/>
+										<span style={styleLabel}>
+											{'ИНСТРУКЦИЯ'}
+										</span>
+									</Button>
+								</div>
 							</FormControl>
 						</Grid>
 					</Grid>

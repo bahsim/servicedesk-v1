@@ -325,6 +325,19 @@ export default createReactClass({
 		)
 	},
 	
+	isLangRu() {
+		return (
+			this.state.lang === 'ru' ? {display:''} : {display:'none'}
+		)
+	},
+	
+	openReadme() {
+		window.open(
+			document.URL + 'eRegistry-readme.pdf', 
+			'_blank'
+		);
+	},
+	
 	render() {
 		const styleLoaderError = (
 			this.state.hasErrored ? (
@@ -383,6 +396,8 @@ export default createReactClass({
 								setFilter={this.setRegistryFilter}
 								status={this.state.filterCurrentStatus}
 								statuses={this.state.statuses}
+								isLangRu={this.isLangRu} 
+								openReadme={this.openReadme} 
 							/>
 							<div ref={(el) => this.registryCurrent = el }>
 								<Registry 
