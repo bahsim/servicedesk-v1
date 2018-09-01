@@ -219,6 +219,16 @@ export default createReactClass({
 		})
 	},
 	
+	preSaveEditRecord(data) {
+		const { record } = this.state;
+		this.setState({
+			record: {
+				...record, 
+				...data,
+			}
+		})
+	},
+	
 	markRecord(mark) {
 		this.setState({ isLoading: true})
 		let status = { id: '', name: '' }
@@ -255,7 +265,7 @@ export default createReactClass({
 			status: 		status.id,
 			statusView: status.name,
 		}};
-		
+		console.log(record);
 		markRecord(record._id, record,
 			(value) => {
 				this.setState({
@@ -417,6 +427,7 @@ export default createReactClass({
 							record={this.state.record}
 							print={this.printRecord} 
 							change={this.saveEditRecord} 
+							preSave={this.preSaveEditRecord}
 							close={this.closeRecord} 
 						/>
 					}

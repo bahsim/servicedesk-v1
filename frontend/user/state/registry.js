@@ -3,7 +3,7 @@ import { i18n } from '../i18n';
 
 export function initializeState() {
 	return {
-		lang: 'en',
+		lang: 'ru',
 		i18n: i18n,
 		isLoading: true,
 		hasErrored: false,

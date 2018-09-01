@@ -87,6 +87,7 @@ export default createReactClass({
 		this.setState({
 			data: { ...data, ...newData}
 		});
+		this.props.preSave(newData);
 	},
 	
 	render() {
