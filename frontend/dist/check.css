@@ -1,0 +1,48 @@
+.title-header {
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	text-align: center;
+}
+.title-string {
+	font-size: 12px;
+	display: block;
+	text-align: center;
+}
+.simple-header {
+	font-size: 14px;
+	font-weight: 700;
+}
+.simple-string {
+	font-size: 14px;
+	page-break-after: always;
+}
+.page-break-mark {
+	display: block;
+	page-break-after: always;
+}
+
+body {
+	background: rgb(204,204,204); 
+}
+page {
+	font-family: arial;
+	background: white;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 0.5cm;
+	box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+page[size="A4"] {  
+	width: 3.14in;
+	height: 5.98in; 
+}
+@page {
+	margin: 0;  
+}
+@media print {
+	body, page {
+		margin: 0;
+		box-shadow: 0;
+	}
+}

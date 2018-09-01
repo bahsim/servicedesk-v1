@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>&nbsp;</title>
+		<link rel="stylesheet" href="/check.css">
+		<script type="text/javascript" src="/moment-with-locales.js"></script>
+	</head>
+	<body>
+		<page size="A4">
+			<div style="margin-right: 1cm;margin-left: 1cm">
+				<br>
+				<span class="title-header">{TICKET}</span>
+				<span id="d1" class="title-string">{created}</span>
+				<br>
+				<span class="simple-header">{CLIENT_INFO}</span><br>
+				<span class="simple-string">{clientInfo}</span>
+				<br>
+				<span class="simple-header">{DEVICE_INFO}</span><br>
+				<span class="simple-string">{deviceInfo}</span>
+				<br>
+				<span class="simple-header">{COMPONENT_PARTS}</span><br>
+				<span class="simple-string">{componentParts}</span>
+				<br>
+				<span class="simple-header">{FOOT_NOTE}</span><br>
+				<span class="simple-string">{footNote}</span>
+			</div>
+			<span class="page-break-mark"></span>
+		</page>
+		<page size="A4">
+			<div style="margin-right: 1cm;margin-left: 1cm">
+				<br>
+				<span class="title-header">{TALON}</span>
+				<span id="d2" class="title-string">{created}</span>
+				<br>
+				<span class="simple-header">{CLIENT_INFO}</span><br>
+				<span class="simple-string">{clientInfo}</span>
+				<br>
+				<span class="simple-header">{DEVICE_INFO}</span><br>
+				<span class="simple-string">{deviceInfo}</span>
+				<br>
+				<span class="simple-header">{COMPONENT_PARTS}</span><br>
+				<span class="simple-string">{componentParts}</span>
+				<br>
+				<span class="simple-header">{FOOT_NOTE}</span><br>
+				<span class="simple-string">{footNote}</span>
+			</div>
+			<span class="page-break-mark"></span>
+		</page>
+		<script> 
+			window.onload = function() { 
+				d1.innerHTML = moment(parseInt(d1.innerHTML)).format('DD.MM.YYYY HH:mm')
+				d2.innerHTML = moment(parseInt(d2.innerHTML)).format('DD.MM.YYYY HH:mm')
+				print() 
+			} 
+		</script>
+	</body>
+</html>
